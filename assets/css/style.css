@@ -5,6 +5,7 @@
 :root {
     font-size: 62.5%;
     --primary-color: #0f1b4c;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -42,17 +43,27 @@ a {
 }
 
 /* ---------header nav--------- */
+.fixed-header {
+    background: #e6f0ff;
+    padding-top: 26px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
 
-header {
+.header {
+    display: flex;
     background: #e6f0ff;
     height: 100vh;
     position: relative;
+    height: calc(100vh - 90px);
+    align-items: center;
 }
 
 .navbar {
     display: flex;
     align-items: center;
-    padding-top: 38px;
+    padding: 12px 0;
 }
 
 .navbar ul {
@@ -90,7 +101,7 @@ header {
 /* ---------header hero--------- */
 
 .hero {
-    margin-top: 130px;
+    /* padding-top: 130px; */
 }
 
 .hero .info {
@@ -153,10 +164,23 @@ header {
 }
 
 .client .img {
-    margin-top: 96px;
+    margin-top: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.client .img a {
+    display: flex;
+    height: 90px;
+    padding: 0 42px;
+    align-items: center;
+
+    border-radius: 12px;
+}
+
+.client .img a:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* ---------Guides--------- */
@@ -249,14 +273,14 @@ header {
     padding: 110px 0;
 }
 
-.featured .header .sub-title {
+.featured .header-ft .sub-title {
     color: #000339;
     font-size: 3.5rem;
     font-weight: 600;
     line-height: 1; /* 100% */
 }
 
-.featured .header .desc {
+.featured .header-ft .desc {
     color: #5a6473;
     font-size: 1.6rem;
     font-weight: 400;
@@ -269,7 +293,7 @@ header {
     align-items: center;
 }
 
-.featured .header .link {
+.featured .header-ft .link {
     margin-top: 15px;
     color: #0689ff;
     font-size: 18px;
